@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct MainLocationView: View {
-        
+    
+    @ObservedObject var viewModel = MainLocationViewModel()
+    
     var body: some View {
         VStack {
             
-            Text("Hello, world!")
-            Text("Hello, world!")
+            Text("Lat: \(viewModel.currentLocation.0)")
+            Text("Lon: \(viewModel.currentLocation.1)")
         }
         .padding()
     }
