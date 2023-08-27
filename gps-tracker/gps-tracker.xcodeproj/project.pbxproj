@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03CC21412A9B532100EADE19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC21402A9B532100EADE19 /* ContentView.swift */; };
+		03CC21412A9B532100EADE19 /* MainLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC21402A9B532100EADE19 /* MainLocationView.swift */; };
 		03CC21432A9B532300EADE19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CC21422A9B532300EADE19 /* Assets.xcassets */; };
 		03CC21462A9B532300EADE19 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CC21452A9B532300EADE19 /* Preview Assets.xcassets */; };
 		03CC21692A9B53A900EADE19 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC21682A9B53A900EADE19 /* AppMain.swift */; };
+		03CC216D2A9B722400EADE19 /* LocatonTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC216C2A9B722400EADE19 /* LocatonTracker.swift */; };
+		03CC21732A9BEB3E00EADE19 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CC21712A9BEB3400EADE19 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,12 +34,14 @@
 
 /* Begin PBXFileReference section */
 		03CC213B2A9B532100EADE19 /* gps-tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gps-tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		03CC21402A9B532100EADE19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		03CC21402A9B532100EADE19 /* MainLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLocationView.swift; sourceTree = "<group>"; };
 		03CC21422A9B532300EADE19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03CC21452A9B532300EADE19 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		03CC214B2A9B532400EADE19 /* gps-trackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gps-trackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CC21552A9B532400EADE19 /* gps-trackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gps-trackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CC21682A9B53A900EADE19 /* AppMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
+		03CC216C2A9B722400EADE19 /* LocatonTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatonTracker.swift; sourceTree = "<group>"; };
+		03CC21712A9BEB3400EADE19 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03CC21732A9BEB3E00EADE19 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +76,7 @@
 				03CC213D2A9B532100EADE19 /* gps-tracker */,
 				03CC214E2A9B532400EADE19 /* gps-trackerTests */,
 				03CC21582A9B532400EADE19 /* gps-trackerUITests */,
+				03CC21702A9BEB0300EADE19 /* Frameworks */,
 				03CC213C2A9B532100EADE19 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,8 +94,8 @@
 		03CC213D2A9B532100EADE19 /* gps-tracker */ = {
 			isa = PBXGroup;
 			children = (
-				03CC21682A9B53A900EADE19 /* AppMain.swift */,
-				03CC21402A9B532100EADE19 /* ContentView.swift */,
+				03CC216E2A9BE76400EADE19 /* Feature */,
+				03CC216A2A9B720200EADE19 /* Core */,
 				03CC21422A9B532300EADE19 /* Assets.xcassets */,
 				03CC21442A9B532300EADE19 /* Preview Content */,
 			);
@@ -116,6 +122,47 @@
 			children = (
 			);
 			path = "gps-trackerUITests";
+			sourceTree = "<group>";
+		};
+		03CC216A2A9B720200EADE19 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				03CC216B2A9B720E00EADE19 /* LocationTracker */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		03CC216B2A9B720E00EADE19 /* LocationTracker */ = {
+			isa = PBXGroup;
+			children = (
+				03CC216C2A9B722400EADE19 /* LocatonTracker.swift */,
+			);
+			path = LocationTracker;
+			sourceTree = "<group>";
+		};
+		03CC216E2A9BE76400EADE19 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				03CC216F2A9BE78000EADE19 /* Main */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		03CC216F2A9BE78000EADE19 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				03CC21682A9B53A900EADE19 /* AppMain.swift */,
+				03CC21402A9B532100EADE19 /* MainLocationView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		03CC21702A9BEB0300EADE19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03CC21712A9BEB3400EADE19 /* CoreLocation.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,7 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03CC21412A9B532100EADE19 /* ContentView.swift in Sources */,
+				03CC21412A9B532100EADE19 /* MainLocationView.swift in Sources */,
+				03CC216D2A9B722400EADE19 /* LocatonTracker.swift in Sources */,
 				03CC21692A9B53A900EADE19 /* AppMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
