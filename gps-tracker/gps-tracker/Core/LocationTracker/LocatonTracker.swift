@@ -9,15 +9,21 @@ import Foundation
 import CoreLocation
 import Combine
 
+public struct Location {
+    
+    public let lat: Double
+    public let lon: Double
+}
+
 protocol LocationTracker {
     
-    var locationPublisher: AnyPublisher<(Double, Double), Error> { get }
+    var locationPublisher: AnyPublisher<Result<Location, Error>, Never> { get }
 }
 
 public final class LocationTrackerImpl: NSObject, LocationTracker {
     
     private let locationManager = CLLocationManager()
-    private lazy var locationSubject = PassthroughSubject<(Double, Double), Error>()
+    private lazy var locationSubject = PassthroughSubject<Result<Location, Error>, Never>()
     private(set) public lazy var locationPublisher = locationSubject.eraseToAnyPublisher()
     
     public override init() {
@@ -35,8 +41,14 @@ extension LocationTrackerImpl: CLLocationManagerDelegate {
         
         if let location = locations.last {
             
-            locationSubject.send((location.coordinate.latitude, location.coordinate.longitude))
+            let tempLocation = Location(lat: location.coordinate.latitude,
+                                        lon: location.coordinate.longitude)
+            locationSubject.send(.success(tempLocation))
         }
+    }
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    
+        locationSubject.send(.failure(error))
     }
 }
 
@@ -49,6 +61,7 @@ extension LocationTrackerImpl {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = true
         locationManager.startUpdatingLocation()
     }
 }

@@ -44,6 +44,7 @@
 		03CC216C2A9B722400EADE19 /* LocatonTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatonTracker.swift; sourceTree = "<group>"; };
 		03CC21712A9BEB3400EADE19 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		03CC21762A9BFB3500EADE19 /* MainLocation.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLocation.ViewModel.swift; sourceTree = "<group>"; };
+		03CC21782A9C880300EADE19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 		03CC213D2A9B532100EADE19 /* gps-tracker */ = {
 			isa = PBXGroup;
 			children = (
+				03CC21782A9C880300EADE19 /* Info.plist */,
 				03CC216E2A9BE76400EADE19 /* Feature */,
 				03CC216A2A9B720200EADE19 /* Core */,
 				03CC21422A9B532300EADE19 /* Assets.xcassets */,
@@ -460,6 +462,7 @@
 				DEVELOPMENT_TEAM = 74BP943WB5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "gps-tracker/Info.plist";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Need location permission for GPS tracker working.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need location permission for GPS tracker working.Need location permission for GPS tracker working.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -491,6 +494,7 @@
 				DEVELOPMENT_TEAM = 74BP943WB5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "gps-tracker/Info.plist";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Need location permission for GPS tracker working.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need location permission for GPS tracker working.Need location permission for GPS tracker working.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

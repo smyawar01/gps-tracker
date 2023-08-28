@@ -11,7 +11,7 @@ import Combine
 class MainLocationViewModel: ObservableObject {
     
     private var locationTracker = LocationTrackerImpl()
-    @Published var currentLocation: (Double, Double) = (1,1)
+    @Published var currentLocation: Location = .init(lat: 1, lon: 1)
     private var cancellables = Set<AnyCancellable>()
         
         init() {
@@ -26,13 +26,18 @@ private extension MainLocationViewModel {
         
         locationTracker.locationPublisher
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { error in
+            .sink { result in
                 
-            }, receiveValue: { [weak self] (lat, lon) in
-                
-                self?.currentLocation.0 = lat
-                self?.currentLocation.1 = lon
-            })
+                switch result {
+                    
+                case .success(let location):
+                    
+                    self.currentLocation = location
+                case .failure(let error):
+                    
+                    print(error)
+                }
+            }
             .store(in: &cancellables)
     }
 }

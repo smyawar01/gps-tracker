@@ -14,8 +14,8 @@ struct MainLocationView: View {
     var body: some View {
         VStack {
             
-            Text("Lat: \(viewModel.currentLocation.0)")
-            Text("Lon: \(viewModel.currentLocation.1)")
+            Text("Lat: \(viewModel.currentLocation.lat)")
+            Text("Lon: \(viewModel.currentLocation.lon)")
         }
         .padding()
     }
