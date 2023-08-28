@@ -14,6 +14,7 @@
 		03CC216D2A9B722400EADE19 /* LocatonTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC216C2A9B722400EADE19 /* LocatonTracker.swift */; };
 		03CC21732A9BEB3E00EADE19 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CC21712A9BEB3400EADE19 /* CoreLocation.framework */; };
 		03CC21772A9BFB3500EADE19 /* MainLocation.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC21762A9BFB3500EADE19 /* MainLocation.ViewModel.swift */; };
+		03CC217C2A9C929700EADE19 /* PermissionErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC217B2A9C929700EADE19 /* PermissionErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		03CC21712A9BEB3400EADE19 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		03CC21762A9BFB3500EADE19 /* MainLocation.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLocation.ViewModel.swift; sourceTree = "<group>"; };
 		03CC21782A9C880300EADE19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		03CC217B2A9C929700EADE19 /* PermissionErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		03CC216E2A9BE76400EADE19 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				03CC21792A9C926900EADE19 /* Common */,
 				03CC216F2A9BE78000EADE19 /* Main */,
 			);
 			path = Feature;
@@ -168,6 +171,22 @@
 				03CC21712A9BEB3400EADE19 /* CoreLocation.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		03CC21792A9C926900EADE19 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				03CC217A2A9C927400EADE19 /* CustomViews */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		03CC217A2A9C927400EADE19 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				03CC217B2A9C929700EADE19 /* PermissionErrorView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +323,7 @@
 				03CC216D2A9B722400EADE19 /* LocatonTracker.swift in Sources */,
 				03CC21692A9B53A900EADE19 /* AppMain.swift in Sources */,
 				03CC21772A9BFB3500EADE19 /* MainLocation.ViewModel.swift in Sources */,
+				03CC217C2A9C929700EADE19 /* PermissionErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,7 +483,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "gps-tracker/Info.plist";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Need location permission for GPS tracker working.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This is critical for GPS Tracker App to show data accurately.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need location permission for GPS tracker working.Need location permission for GPS tracker working.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -495,7 +515,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "gps-tracker/Info.plist";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Need location permission for GPS tracker working.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This is critical for GPS Tracker App to show data accurately.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need location permission for GPS tracker working.Need location permission for GPS tracker working.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

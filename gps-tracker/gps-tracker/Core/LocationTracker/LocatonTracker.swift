@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import Combine
+import UIKit
 
 public struct Location {
     
@@ -49,6 +50,14 @@ extension LocationTrackerImpl: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     
         locationSubject.send(.failure(error))
+    }
+    public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        
+        if manager.authorizationStatus == CLAuthorizationStatus.authorizedAlways ||
+            manager.authorizationStatus == CLAuthorizationStatus.authorizedWhenInUse {
+            
+            locationManager.startUpdatingLocation()
+        }
     }
 }
 

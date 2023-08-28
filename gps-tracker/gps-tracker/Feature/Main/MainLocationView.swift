@@ -12,12 +12,26 @@ struct MainLocationView: View {
     @ObservedObject var viewModel = MainLocationViewModel()
     
     var body: some View {
-        VStack {
+        
+        ZStack {
             
-            Text("Lat: \(viewModel.currentLocation.lat)")
-            Text("Lon: \(viewModel.currentLocation.lon)")
+            VStack {
+                
+                if case .updateLocation(let location) = viewModel.viewState {
+                    
+                    Text("Lat: \(location.lat)")
+                    Text("Lon: \(location.lon)")
+                }
+            }
+            if case .permissionError = viewModel.viewState {
+                
+                VStack {
+                    
+                    PermissionErrorView { viewModel.askPermission() }
+                    Spacer()
+                }
+            }
         }
-        .padding()
     }
 }
 
